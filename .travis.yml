@@ -7,10 +7,6 @@ scala:
 
 jdk: oraclejdk8
 
-env:
-  - SCALAZ_VERSION=7.2.8
-  - SCALAZ_VERSION=7.1.11
-  
 branches:
   only:
   - master
@@ -31,3 +27,12 @@ cache:
 after_success:
   - find $HOME/.sbt -name "*.lock" | xargs rm
   - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
+
+env:
+  global:
+    - secure: "gvpdCQyA+yT/TfXnYXDC9+n16aPPtnDUgzGzEfJXiFnaar6ve5zhf8y9pVr8MMREx4HUxRV/oFBXI7SNkmsg6RPmaTH8V+PNbsHnzy0MxXlskjDQg5vRxqm5kqR+ypJg8TYYmo6AeGtNWbr1Vws9wHHSnqv7OtzHV2ujKOcFdEE="
+    - secure: "M0c0FG8yJA36TmKM7BBG/LXNPXnojzj7G5BgDTTqpknc1le9iV1EuGBdxldpRXTqCdWMxvKniPj8hjErI+kwjpybizD+Io2HGbT3OedfxL1jlkzaKOB8pjE3+E1v2Yi1jlgzGtUDexRuq+1s5GtU1sFDr/qo9s8IGY9WUShseiI="
+    - secure: "WDlk/ssMbKjraSLypcYQSlbVSVeA76qqqE32Yn4Fv3AKKT+pxdo6VNlaxpoM2R1oCLTXO18FRSKu2V5n/8zVCiypEYSm3DDzbY/rs8CyUEeNxJDB9+MebPWR53emo5/O+8gBAQlAxz8PaICArz7lYAW2ZulBHjPUwlkfrfz7piA="
+  matrix:
+    - SCALAZ_VERSION=7.2.8
+    - SCALAZ_VERSION=7.1.11
